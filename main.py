@@ -11,7 +11,7 @@ import pickle
 from flask import Flask, request, jsonify
 from ml_model import predict_GovRevnGDP
 
-@app.route('/predict', methods=["POST","GET"])
+@app.route('/predict', methods=["POST"])
 def predict():
     if request.method == "POST":
         GeoEco1 = request.get_json(force=True, silent=True)
