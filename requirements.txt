@@ -4,6 +4,6 @@ scikit-learn
 flask
 gunicorn
 seaborn
-plotly
+matplotlib
 warnings
 scipy
