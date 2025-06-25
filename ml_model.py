@@ -2,27 +2,27 @@
 import pandas as pd
 import numpy as np
 import seaborn as sns
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 #Importing all necessary modules
-import plotly.express as px
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
-import warnings
-from scipy import stats
+#import plotly.express as px
+#import plotly.graph_objects as go
+#from plotly.subplots import make_subplots
+#import warnings
+#from scipy import stats
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 from sklearn.cluster import KMeans
 #import country_converter as coco
 
 # Configuration
-warnings.filterwarnings('ignore')
-plt.style.use('seaborn-v0_8')
-sns.set_palette("husl")
+#warnings.filterwarnings('ignore')
+#plt.style.use('seaborn-v0_8')
+#sns.set_palette("husl")
 
 # Configuration Plotly pour Kaggle
-import plotly.io as pio
-pio.renderers.default = "notebook"
+#import plotly.io as pio
+#pio.renderers.default = "notebook"
 
 
 #Custom function 
