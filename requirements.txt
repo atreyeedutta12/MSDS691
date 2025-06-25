@@ -4,9 +4,6 @@ scikit-learn
 flask
 gunicorn
 seaborn
-plotly.express
-plotly.graph_objects
-plotly.subplots
+plotly
 warnings
 scipy
-plotly.io
