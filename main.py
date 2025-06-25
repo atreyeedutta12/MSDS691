@@ -16,7 +16,7 @@ def predict():
     if request.method == "POST":
         GeoEco1 = request.get_json(force=True, silent=True)
         print(list(GeoEco1))
-        with open('./model_files/model.bin', 'rb') as f_in:
+        with open('model.bin', 'rb') as f_in:
             model = pickle.load(f_in)
             f_in.close()
         predictions = predict_GovRevnGDP(GeoEco1, model)
