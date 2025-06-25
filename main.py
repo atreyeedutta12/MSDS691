@@ -9,7 +9,7 @@ def test():
 
 import pickle
 from flask import Flask, request, jsonify
-from model_files.ml_model import predict_GovRevnGDP
+from ml_model import predict_GovRevnGDP
 
 @app.route('/predict', methods=["POST","GET"])
 def predict():
