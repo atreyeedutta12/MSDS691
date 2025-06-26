@@ -15,8 +15,8 @@ from ml_model import predict_GovRevnGDP
 def predict():
     if request.method == "POST":
         GeoEco1 = request.get_json()
-        Inflation_CPI = data.get('Inflation_CPI')
-        GDP_Current_USD = data.get('GDP_Current_USD')
+        Inflation_CPI = GeoEco1.get('Inflation_CPI')
+        GDP_Current_USD = GeoEco1.get('GDP_Current_USD')
         print(f"Received data: Inflation_CPI={Inflation_CPI},GDP_Current_USD={GDP_Current_USD})
         #with open('model.bin', 'rb') as f_in:
             #model = pickle.load(f_in)
