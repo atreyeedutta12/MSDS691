@@ -14,4 +14,5 @@ from ml_model import predict_GovRevnGDP
 @app.route('/predict', methods=["POST","GET"])
 def predict():
     if request.method == "POST":
-        return "POST!"
+        let requestData = JSON.parse(pm.request.body.raw)
+        return jsonify(requestData)
