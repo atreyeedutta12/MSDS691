@@ -13,8 +13,8 @@ from ml_model import predict_GovRevnGDP
 
 @app.route('/predict', methods=["POST"])
 def predict():
-    if request.method == "POST":
-        GeoEco1 = request.get_json()
+    if request.is_json:
+        GeoEco1 = request.json
         Inflation_CPI = GeoEco1.get('Inflation_CPI')
         GDP_Current_USD = GeoEco1.get('GDP_Current_USD')
         print(f"Received data: Inflation_CPI={Inflation_CPI},GDP_Current_USD={GDP_Current_USD}")
