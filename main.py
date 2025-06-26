@@ -14,7 +14,7 @@ from ml_model import predict_GovRevnGDP
 @app.route('/predict', methods=["POST"])
 def predict():
     if request.method == "POST":
-        GeoEco1 = request.get_json(force=True, silent=True)
+        GeoEco1 = request.get_json()
         print(list(GeoEco1))
         with open('model.bin', 'rb') as f_in:
             model = pickle.load(f_in)
