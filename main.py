@@ -13,16 +13,10 @@ from ml_model import predict_GovRevnGDP
 
 @app.route('/predict', methods=["POST", "GET"])
 def predict():
-    if request.is_json:
-        if request.method == "POST":
-            GeoEco1 = request.json
-            Inflation_CPI = GeoEco1.get('Inflation_CPI')
-            GDP_Current_USD = GeoEco1.get('GDP_Current_USD')
-            return jsonify({"message":f"Received data: Inflation_CPI={Inflation_CPI},GDP_Current_USD={GDP_Current_USD}"})
-        else:
-            return jsonify({"error":"Must be POST"})
-    else:
-        return jsonify({"error": "Request must be JSON"})
+    if request.method == "POST":
+        data=request.get_json()
+        print(list(data))
+        return jsonify(data)
         #with open('model.bin', 'rb') as f_in:
             #model = pickle.load(f_in)
             #f_in.close()
