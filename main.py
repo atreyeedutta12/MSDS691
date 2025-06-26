@@ -11,13 +11,16 @@ import pickle
 from flask import Flask, request, jsonify
 from ml_model import predict_GovRevnGDP
 
-@app.route('/predict', methods=["POST"])
+@app.route('/predict', methods=["POST", "GET"])
 def predict():
     if request.is_json:
-        GeoEco1 = request.json
-        Inflation_CPI = GeoEco1.get('Inflation_CPI')
-        GDP_Current_USD = GeoEco1.get('GDP_Current_USD')
-        return jsonify({"message":f"Received data: Inflation_CPI={Inflation_CPI},GDP_Current_USD={GDP_Current_USD}"})
+        if request.method == "POST":
+            GeoEco1 = request.json
+            Inflation_CPI = GeoEco1.get('Inflation_CPI')
+            GDP_Current_USD = GeoEco1.get('GDP_Current_USD')
+            return jsonify({"message":f"Received data: Inflation_CPI={Inflation_CPI},GDP_Current_USD={GDP_Current_USD}"})
+        else:
+            return jsonify({"error":"Must be POST"})
     else:
         return jsonify({"error": "Request must be JSON"})
         #with open('model.bin', 'rb') as f_in:
