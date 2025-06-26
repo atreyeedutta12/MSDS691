@@ -16,11 +16,12 @@ def predict():
     if request.method == "POST":
         GeoEco1 = request.get_json()
         print(list(GeoEco1))
-        with open('model.bin', 'rb') as f_in:
-            model = pickle.load(f_in)
-            f_in.close()
-        predictions = predict_GovRevnGDP(GeoEco1, model)
-        result = {
-        'GovRevnGDP_prediction': list(predictions)
-        }
-        return jsonify(result)
+        #with open('model.bin', 'rb') as f_in:
+            #model = pickle.load(f_in)
+            #f_in.close()
+        #predictions = predict_GovRevnGDP(GeoEco1, model)
+        #result = {
+        #'GovRevnGDP_prediction': list(predictions)
+        #}
+        #return jsonify(result)
+        return jsonify(GeoEco1)
