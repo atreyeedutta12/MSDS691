@@ -1,1 +1,2 @@
-web:gunicorn wsgi:app
+web: gunicorn wsgi:app
+server = app.server
