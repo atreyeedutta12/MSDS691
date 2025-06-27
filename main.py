@@ -3,7 +3,7 @@ from flask import Flask
 ##creating a flask app and naming it "app"
 app = Flask('app')
 
-@app.route('/test', methods=['GET'])
+@app.route('/test', methods=["GET"])
 def test():
     return 'Pinging Model Application!!'
 
@@ -11,7 +11,7 @@ import pickle
 from flask import Flask, request, jsonify
 from ml_model import predict_GovRevnGDP
 
-@app.route('/predict', methods=["POST", "GET"])
+@app.route('/predict', methods=["POST"])
 def predict():
     if request.method == "POST":
         data=request.get_json()
