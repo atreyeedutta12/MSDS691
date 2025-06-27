@@ -5,24 +5,24 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 #Importing all necessary modules
-#import plotly.express as px
-#import plotly.graph_objects as go
-#from plotly.subplots import make_subplots
-#import warnings
-#from scipy import stats
+import plotly.express as px
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+import warnings
+from scipy import stats
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 from sklearn.cluster import KMeans
 #import country_converter as coco
 
 # Configuration
-#warnings.filterwarnings('ignore')
-#plt.style.use('seaborn-v0_8')
-#sns.set_palette("husl")
+warnings.filterwarnings('ignore')
+plt.style.use('seaborn-v0_8')
+sns.set_palette("husl")
 
 # Configuration Plotly pour Kaggle
-#import plotly.io as pio
-#pio.renderers.default = "notebook"
+import plotly.io as pio
+pio.renderers.default = "notebook"
 
 
 #Custom function 
@@ -34,9 +34,18 @@ def predict_GovRevnGDP(GeoEco_stats, model):
     #df = df.drop(columns=['Interest Rate (Real, %)'])
     #df = df.dropna()
     #df = df.drop(columns=['country_id', 'country_name', 'year'])
-    X=df.drop("Government Revenue (% of GDP)",axis=1)
-    y=df["Government Revenue (% of GDP)"]
+    X=df.drop('Government Revenue (% of GDP)',axis=1)
+    y=df['Government Revenue (% of GDP)']
+    results = []
     from sklearn.model_selection import train_test_split
+    from sklearn.linear_model import LinearRegression, Ridge, Lasso, ElasticNet
+    from sklearn.tree import DecisionTreeRegressor
+    from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
+    from sklearn.svm import SVR
+    from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    #y_pred = model.predict(X_test)
+    #return y_pred
+    model.fit(X_train, y_train)
     y_pred = model.predict(X_test)
     return y_pred
