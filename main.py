@@ -1,7 +1,15 @@
 from flask import Flask 
+# added as WIX not working
+from flask_cors import CORS
 
 ##creating a flask app and naming it "app"
 app = Flask('app')
+# added as WIX not working
+CORS(app) 
+# added as WIX not working
+@app.route('/')
+def index():
+    return "CORS is enabled for all!"
 
 @app.route('/test', methods=["GET"])
 def test():
