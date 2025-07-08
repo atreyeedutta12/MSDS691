@@ -29,7 +29,7 @@ def predict():
             f_in.close()
         predictions = predict_GovRevnGDP(data, model)
         result = {
-        'Government Revenue GDP Prediction': [round(num,2) for num in list(predictions)]
+        'Government Revenue %GDP Prediction': [round(num,2) for num in list(predictions)]
         }
         return jsonify(result)
         #return jsonify(GeoEco1)
