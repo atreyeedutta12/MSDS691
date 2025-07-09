@@ -27,9 +27,9 @@ def predict():
         with open('model.bin', 'rb') as f_in:
             model = pickle.load(f_in)
             f_in.close()
-        predictions = predict_GovRevnGDP(data, model)
+        Result_predictions = predict_GovRevnGDP(data, model)
         result = {
-        'Government Revenue %GDP Prediction': [round(num,2) for num in list(predictions)]
+        'Government Revenue %GDP Comparison': Result_predictions
         }
         return jsonify(result)
         #return jsonify(GeoEco1)
