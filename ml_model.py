@@ -31,11 +31,11 @@ def predict_GovRevnGDP(GeoEco_stats, model):
         df = pd.DataFrame(GeoEco_stats)
     else:
         df = GeoEco_stats
-    df = df.drop(columns=['interestRateReal'])
+    df = df.drop(columns=['interestRateReal1'])
     df = df.dropna()
-    df = df.drop(columns=['country_id', 'country_name', 'year','_id','_updatedDate','_createdDate','_owner','link-import1-title'])
-    X=df.drop('Government_Revenue_GDP',axis=1)
-    y=df['Government_Revenue_GDP']
+    df = df.drop(columns=['country_id1', 'country', 'year1','_id','_updatedDate','_createdDate','_owner','link-import1-title'])
+    X=df.drop('governmentRevenueOfGdp1',axis=1)
+    y=df['governmentRevenueOfGdp1']
     #results = []
     from sklearn.model_selection import train_test_split
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
