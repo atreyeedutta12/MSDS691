@@ -31,5 +31,5 @@ def predict():
         #result = {
         #'Government Revenue %GDP Comparison': Result_predictions
         #}
-        return jsonify(Result_predictions)
+        return jsonify({"Result_predictions": Result_predictions})
         #return jsonify(GeoEco1)
