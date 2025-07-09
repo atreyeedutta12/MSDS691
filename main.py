@@ -23,7 +23,7 @@ from ml_model import predict_GovRevnGDP
 def predict():
     if request.method == "POST":
         data=request.get_json()
-        print(list(data))
+        #print(list(data))
         with open('model.bin', 'rb') as f_in:
             model = pickle.load(f_in)
             f_in.close()
