@@ -31,7 +31,6 @@ def predict_GovRevnGDP(GeoEco_stats, model):
     df = pd.DataFrame.from_dict(GeoEco_stats,orient = 'index')
     #else:
         #df = GeoEco_stats
-    #df = df.drop(columns=['interestRateReal1'])
     df = df.drop('interestRateReal1',axis=1)
     df = df.dropna()
     df = df.drop(columns=['country_id1', 'country', 'year1','_id','_updatedDate','_createdDate','_owner'])
