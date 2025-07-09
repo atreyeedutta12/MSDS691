@@ -46,8 +46,8 @@ def predict_GovRevnGDP(GeoEco_stats, model):
     #y_pred = model.predict(X)
     #return y_pred
     #Compare Actual vs Predicted
-    Predictions = pd.DataFrame(y_pred).reset_index(drop = True).rename(columns ={0:"Predicted"})
-    Actual = pd.DataFrame(y_test).reset_index(drop = True).rename(columns ={"governmentRevenueOfGdp1":"Actual"})
+    Predictions = pd.DataFrame(y_pred).round(2).reset_index(drop = True).rename(columns ={0:"Predicted"})
+    Actual = pd.DataFrame(y_test).round(2).reset_index(drop = True).rename(columns ={"governmentRevenueOfGdp1":"Actual"})
     compare_GovRevGDP = pd.concat([Predictions,Actual],axis = 1)
     return compare_GovRevGDP.to_dict(orient='records')
     #return compare_GovRevGDP.style.set_caption("Government Revenue of %GDP Comparison")
