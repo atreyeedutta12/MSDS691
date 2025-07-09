@@ -28,7 +28,7 @@ import matplotlib.pyplot as plt
 #Custom function 
 def predict_GovRevnGDP(GeoEco_stats, model):
     #if type(GeoEco_stats) == dict:
-    df = pd.DataFrame.from_dict(GeoEco_stats,orient = 'index')
+    df = pd.DataFrame.from_dict(GeoEco_stats,orient = 'columns')
     #else:
         #df = GeoEco_stats
     df = df.drop('interestRateReal1',axis=1)
