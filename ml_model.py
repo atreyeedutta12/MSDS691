@@ -39,9 +39,8 @@ def predict_GovRevnGDP(GeoEco_stats, model):
     #results = []
     #from sklearn.model_selection import train_test_split
     #X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-    train_size = int(len(X) * 0.8) # Example: 80% for training
-    X_train, X_test = X[0:train_size], X[train_size:]
-    y_train, y_test = y[0:train_size], y[train_size:]
-    model.fit(X_train, y_train)
-    y_pred = model.predict(X_test)
+    #model.fit(X_train, y_train)
+    model.fit(X, y)
+    #y_pred = model.predict(X_test)
+    y_pred = model.predict(X)
     return y_pred
